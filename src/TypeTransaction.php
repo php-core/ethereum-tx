@@ -9,7 +9,7 @@
  * @license MIT
  */
 
-namespace Web3p\EthereumTx;
+namespace PHPCore\EthereumTx;
 
 use InvalidArgumentException;
 use RuntimeException;
@@ -17,7 +17,7 @@ use Web3p\RLP\RLP;
 use Elliptic\EC;
 use Elliptic\EC\KeyPair;
 use ArrayAccess;
-use Web3p\EthereumUtil\Util;
+use PHPCore\EthereumUtil\Util;
 
 /**
  * It's a base transaction for generating/serializing ethereum type transaction (EIP1559/EIP2930).
@@ -25,7 +25,7 @@ use Web3p\EthereumUtil\Util;
  * 
  * @author Peter Lai <alk03073135@gmail.com>
  * @link https://www.web3p.xyz
- * @filesource https://github.com/web3p/ethereum-tx
+ * @filesource https://github.com/php-core/ethereum-tx
  */
 class TypeTransaction implements ArrayAccess
 {
@@ -128,7 +128,7 @@ class TypeTransaction implements ArrayAccess
     /**
      * Ethereum util instance
      * 
-     * @var \Web3p\EthereumUtil\Util
+     * @var \PHPCore\EthereumUtil\Util
      */
     protected $util;
 

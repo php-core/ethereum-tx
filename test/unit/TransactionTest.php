@@ -3,9 +3,9 @@
 namespace Test\Unit;
 
 use Test\TestCase;
-use Web3p\EthereumTx\Transaction;
-use Web3p\EthereumTx\EIP2930Transaction;
-use Web3p\EthereumTx\EIP1559Transaction;
+use PHPCore\EthereumTx\Transaction;
+use PHPCore\EthereumTx\EIP2930Transaction;
+use PHPCore\EthereumTx\EIP1559Transaction;
 
 class TransactionTest extends TestCase
 {

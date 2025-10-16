@@ -9,7 +9,7 @@
  * @license MIT
  */
 
-namespace Web3p\EthereumTx;
+namespace PHPCore\EthereumTx;
 
 use InvalidArgumentException;
 use RuntimeException;
@@ -17,14 +17,14 @@ use Web3p\RLP\RLP;
 use Elliptic\EC;
 use Elliptic\EC\KeyPair;
 use ArrayAccess;
-use Web3p\EthereumUtil\Util;
-use Web3p\EthereumTx\TypeTransaction;
+use PHPCore\EthereumUtil\Util;
+use PHPCore\EthereumTx\TypeTransaction;
 
 /**
  * It's a instance for generating/serializing ethereum eip1559 transaction.
  * 
  * ```php
- * use Web3p\EthereumTx\EIP1559Transaction;
+ * use PHPCore\EthereumTx\EIP1559Transaction;
  * 
  * // generate transaction instance with transaction parameters
  * $transaction = new EIP1559Transaction([
@@ -57,7 +57,7 @@ use Web3p\EthereumTx\TypeTransaction;
  * 
  * @author Peter Lai <alk03073135@gmail.com>
  * @link https://www.web3p.xyz
- * @filesource https://github.com/web3p/ethereum-tx
+ * @filesource https://github.com/php-core/ethereum-tx
  */
 class EIP1559Transaction extends TypeTransaction
 {

@@ -1,20 +1,20 @@
 # ethereum-tx
-[![PHP](https://github.com/web3p/ethereum-tx/actions/workflows/php.yml/badge.svg)](https://github.com/web3p/ethereum-tx/actions/workflows/php.yml)
-[![codecov](https://codecov.io/gh/web3p/ethereum-tx/branch/master/graph/badge.svg)](https://codecov.io/gh/web3p/ethereum-tx)
+[![PHP](https://github.com/php-core/ethereum-tx/actions/workflows/php.yml/badge.svg)](https://github.com/php-core/ethereum-tx/actions/workflows/php.yml)
+[![codecov](https://codecov.io/gh/php-core/ethereum-tx/branch/master/graph/badge.svg)](https://codecov.io/gh/php-core/ethereum-tx)
 
 Ethereum transaction library in PHP.
 
 # Install
 
 ```
-composer require web3p/ethereum-tx
+composer require php-core/ethereum-tx
 ```
 
 # Usage
 
 ## Create a transaction
 ```php
-use Web3p\EthereumTx\Transaction;
+use PHPCore\EthereumTx\Transaction;
 
 // without chainId
 $transaction = new Transaction([
@@ -45,7 +45,7 @@ $transaction = new Transaction('0xf86c098504a817c8008252089435353535353535353535
 
 ## Create a EIP1559 transaction
 ```php
-use Web3p\EthereumTx\EIP1559Transaction;
+use PHPCore\EthereumTx\EIP1559Transaction;
 
 // generate transaction instance with transaction parameters
 $transaction = new EIP1559Transaction([
@@ -64,7 +64,7 @@ $transaction = new EIP1559Transaction([
 
 ## Create a EIP2930 transaction:
 ```php
-use Web3p\EthereumTx\EIP2930Transaction;
+use PHPCore\EthereumTx\EIP2930Transaction;
 
 // generate transaction instance with transaction parameters
 $transaction = new EIP2930Transaction([
@@ -81,7 +81,7 @@ $transaction = new EIP2930Transaction([
 
 ## Sign a transaction:
 ```php
-use Web3p\EthereumTx\Transaction;
+use PHPCore\EthereumTx\Transaction;
 
 $signedTransaction = $transaction->sign('your private key');
 ```

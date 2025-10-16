@@ -9,7 +9,7 @@
  * @license MIT
  */
 
-namespace Web3p\EthereumTx;
+namespace PHPCore\EthereumTx;
 
 use InvalidArgumentException;
 use RuntimeException;
@@ -17,13 +17,13 @@ use Web3p\RLP\RLP;
 use Elliptic\EC;
 use Elliptic\EC\KeyPair;
 use ArrayAccess;
-use Web3p\EthereumUtil\Util;
+use PHPCore\EthereumUtil\Util;
 
 /**
  * It's a instance for generating/serializing ethereum transaction.
  * 
  * ```php
- * use Web3p\EthereumTx\Transaction;
+ * use PHPCore\EthereumTx\Transaction;
  * 
  * // generate transaction instance with transaction parameters
  * $transaction = new Transaction([
@@ -54,7 +54,7 @@ use Web3p\EthereumUtil\Util;
  * 
  * @author Peter Lai <alk03073135@gmail.com>
  * @link https://www.web3p.xyz
- * @filesource https://github.com/web3p/ethereum-tx
+ * @filesource https://github.com/php-core/ethereum-tx
  */
 class Transaction implements ArrayAccess
 {
@@ -157,7 +157,7 @@ class Transaction implements ArrayAccess
     /**
      * Ethereum util instance
      * 
-     * @var \Web3p\EthereumUtil\Util
+     * @var \PHPCore\EthereumUtil\Util
      */
     protected $util;
 
