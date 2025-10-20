@@ -167,7 +167,7 @@ class Transaction implements ArrayAccess
      * @param array|string $txData
      * @return void
      */
-    public function __construct($txData=[])
+    public function __construct($txData = [])
     {
         $this->rlp = new RLP;
         $this->secp256k1 = new EC('secp256k1');
@@ -205,7 +205,7 @@ class Transaction implements ArrayAccess
      * @param string $name key or protected property name
      * @return mixed
      */
-    public function __get(string $name)
+    public function __get(string $name): mixed
     {
         $method = 'get' . ucfirst($name);
 
@@ -222,7 +222,7 @@ class Transaction implements ArrayAccess
      * @param mixed value
      * @return void
      */
-    public function __set(string $name, $value)
+    public function __set(string $name, $value): void
     {
         $method = 'set' . ucfirst($name);
 
@@ -237,7 +237,7 @@ class Transaction implements ArrayAccess
      * 
      * @return string hex encoded of the transaction
      */
-    public function __toString()
+    public function __toString(): string
     {
         return $this->hash(false);
     }
@@ -249,7 +249,7 @@ class Transaction implements ArrayAccess
      * @param string value
      * @return void
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         $txKey = isset($this->attributeMap[$offset]) ? $this->attributeMap[$offset] : null;
 
@@ -289,7 +289,7 @@ class Transaction implements ArrayAccess
      * @param string $offset key, eg: to
      * @return bool
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         $txKey = isset($this->attributeMap[$offset]) ? $this->attributeMap[$offset] : null;
 
@@ -305,7 +305,7 @@ class Transaction implements ArrayAccess
      * @param string $offset key, eg: to
      * @return void
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         $txKey = isset($this->attributeMap[$offset]) ? $this->attributeMap[$offset] : null;
 
@@ -320,7 +320,7 @@ class Transaction implements ArrayAccess
      * @param string $offset key, eg: to 
      * @return mixed value of the transaction
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         $txKey = isset($this->attributeMap[$offset]) ? $this->attributeMap[$offset] : null;
 
@@ -335,7 +335,7 @@ class Transaction implements ArrayAccess
      * 
      * @return array raw ethereum transaction data
      */
-    public function getTxData()
+    public function getTxData(): array
     {
         return $this->txData;
     }
@@ -345,7 +345,7 @@ class Transaction implements ArrayAccess
      * 
      * @return string hex encoded of the serialized ethereum transaction
      */
-    public function serialize()
+    public function serialize(): string
     {
         $chainId = $this->offsetGet('chainId');
 
@@ -372,7 +372,7 @@ class Transaction implements ArrayAccess
      * @param string $privateKey hex encoded private key
      * @return string hex encoded signed ethereum transaction
      */
-    public function sign(string $privateKey)
+    public function sign(string $privateKey): string
     {
         if ($this->util->isHex($privateKey)) {
             $privateKey = $this->util->stripZero($privateKey);
@@ -408,7 +408,7 @@ class Transaction implements ArrayAccess
      * @param bool $includeSignature hash with signature
      * @return string hex encoded hash of the ethereum transaction
      */
-    public function hash(bool $includeSignature=false)
+    public function hash(bool $includeSignature = false): string
     {
         $chainId = $this->offsetGet('chainId');
 
@@ -448,7 +448,7 @@ class Transaction implements ArrayAccess
      * 
      * @return string hex encoded ethereum address
      */
-    public function getFromAddress()
+    public function getFromAddress(): string
     {
         $from = $this->offsetGet('from');
 
