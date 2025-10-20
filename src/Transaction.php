@@ -222,7 +222,7 @@ class Transaction implements ArrayAccess
      * @param mixed value
      * @return void
      */
-    public function __set(string $name, $value): void
+    public function __set(string $name, $value)
     {
         $method = 'set' . ucfirst($name);
 
@@ -286,10 +286,10 @@ class Transaction implements ArrayAccess
     /**
      * Return whether the value is in the transaction with given key.
      * 
-     * @param string $offset key, eg: to
+     * @param mixed $offset key, eg: to
      * @return bool
      */
-    public function offsetExists($offset): bool
+    public function offsetExists(mixed $offset): bool
     {
         $txKey = isset($this->attributeMap[$offset]) ? $this->attributeMap[$offset] : null;
 
@@ -302,10 +302,10 @@ class Transaction implements ArrayAccess
     /**
      * Unset the value in the transaction with given key.
      * 
-     * @param string $offset key, eg: to
+     * @param mixed $offset key, eg: to
      * @return void
      */
-    public function offsetUnset($offset): void
+    public function offsetUnset(mixed $offset): void
     {
         $txKey = isset($this->attributeMap[$offset]) ? $this->attributeMap[$offset] : null;
 
@@ -317,10 +317,10 @@ class Transaction implements ArrayAccess
     /**
      * Return the value in the transaction with given key.
      * 
-     * @param string $offset key, eg: to 
+     * @param mixed $offset key, eg: to 
      * @return mixed value of the transaction
      */
-    public function offsetGet($offset): mixed
+    public function offsetGet(mixed $offset): mixed
     {
         $txKey = isset($this->attributeMap[$offset]) ? $this->attributeMap[$offset] : null;
 
